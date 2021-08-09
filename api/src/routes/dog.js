@@ -5,9 +5,19 @@ const {getAllDogs} = require("../functions/getinfo")
 
 router.get("/", async (req, res) => {
     const name = req.query.name;
+    const temperament = req.query.temperament;
     let searchResult = await getAllDogs();
-    if (!name) {
+    if (!name && !temperament) {
         return res.status(200).send(searchResult)
+    } 
+    if(temperament){
+        let temperamentSearch = await searchResult.filter(el => el.temperament && el.temperament.toLowerCase().includes(temperament.toLowerCase()));
+        if (temperamentSearch.length) {
+            return res.status(200).send(temperamentSearch)
+        } else {
+            return res.status(400).send("Temperament was not Found")
+        }
+
     } else {
         let nameSearch = await searchResult.filter(el => el.name.toLowerCase().includes(name.toLowerCase()));
         if (nameSearch.length) {
