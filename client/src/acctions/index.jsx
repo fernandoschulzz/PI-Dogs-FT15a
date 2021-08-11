@@ -1,6 +1,6 @@
 import axios from "axios";
 import { bindActionCreators } from "redux";
-import {GET_DOGS, GET_DOGS_BY_NAME, GET_DOGS_BY_TEMPERAMENT, GET_ID, FILTER_CREATED, SORT_BY_NAME} from "./const";
+import {GET_DOGS, GET_DOGS_BY_NAME, GET_DOGS_BY_TEMPERAMENT, GET_ID, FILTER_CREATED, SORT_BY_NAME, SORT_BY_WEIGHT, GET_TEMPERAMENTS, POST_NEW_DOG} from "./const";
 
 export function getDogs() {
     return async function(dispatch){
@@ -31,6 +31,23 @@ export function getDogsByTemperament(payload) {
         })
     }
 }
+export function getTemperaments() {
+    return async function(dispatch){
+        var json = await axios.get("http://localhost:3001/dogtemperament");
+        return dispatch({
+            type: GET_TEMPERAMENTS,
+            payload: await json.data
+        })
+    }
+}
+
+export function postNewDog(payload) {
+    return async function(dispatch){
+        var response = await axios.post("http://localhost:3001/dog", payload);
+        return response;
+    
+    }
+}
 
 export function filterCreated(payload) {
     return {
@@ -42,6 +59,13 @@ export function filterCreated(payload) {
 export function sortByName(payload) {
     return {
         type: SORT_BY_NAME,
+        payload
+    }
+}
+
+export function sortByWeight(payload) {
+    return {
+        type: SORT_BY_WEIGHT,
         payload
     }
 }

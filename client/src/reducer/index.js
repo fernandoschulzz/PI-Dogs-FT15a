@@ -1,7 +1,8 @@
-import {GET_DOGS, GET_DOGS_BY_NAME, GET_ID, GET_DOGS_BY_TEMPERAMENT, FILTER_CREATED, SORT_BY_NAME} from "../acctions/const";
+import {GET_DOGS, GET_DOGS_BY_NAME, GET_ID, GET_DOGS_BY_TEMPERAMENT, FILTER_CREATED, SORT_BY_NAME,SORT_BY_WEIGHT, GET_TEMPERAMENTS, POST_NEW_DOG} from "../acctions/const";
 const initialState = {
     dogs: [],
-    alldogs: []
+    alldogs: [],
+    temperaments: []
 }
 
 const rootReducer = function (state = initialState, action) {
@@ -21,6 +22,15 @@ const rootReducer = function (state = initialState, action) {
             return{
                 ...state,
                 dogs: action.payload
+            }
+        case GET_TEMPERAMENTS:
+            return{
+                ...state,
+                temperaments: action.payload
+            }
+        case POST_NEW_DOG:
+            return{
+                ...state
             }
         case FILTER_CREATED:
             const filtered = action.payload === "created" ? state.alldogs.filter(ele => ele.createdInDb) :
@@ -53,6 +63,30 @@ const rootReducer = function (state = initialState, action) {
                 ...state,
                 dogs: sortedArray
             }
+            case SORT_BY_WEIGHT: 
+            let sortedArray2 = action.payload === "asc"? 
+                state.dogs.sort(function(a,b){
+                    if(parseInt(a.weight.slice(0,3))  > parseInt(b.weight.slice(0,3))) {
+                        return 1;
+                    }
+                    if(parseInt(b.weight.slice(0,3)) > parseInt(a.weight.slice(0,3))) {
+                        return -1;
+                    }
+                    return 0
+                }) :
+                state.dogs.sort(function(a,b){
+                    if(parseInt(a.weight.slice(0,3)) > parseInt(b.weight.slice(0,3))) {
+                        return -1;
+                    }
+                    if(parseInt(b.weight.slice(0,3)) > parseInt(a.weight.slice(0,3))) {
+                        return 1;
+                    }
+                    return 0
+                });
+                return {
+                    ...state,
+                    dogs: sortedArray2
+                }
             default: return state;
     }
 }

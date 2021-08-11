@@ -7,7 +7,8 @@ const getApiInfo = async () => {
             return {
                 id: element.id,
                 name: element.name,
-                weight: element.weight.metric,
+                weight: element.weight.metric.slice(0,4) === "NaN" ||
+                element.weight.metric.slice(0,8) === "NaN - 8" ? "15 - 20": element.weight.metric,
                 height: element.height.metric,
                 lifespan: element.life_span,
                 image: element.image.url,
