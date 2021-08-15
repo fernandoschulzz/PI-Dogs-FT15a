@@ -1,0 +1,83 @@
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+.container {
+    border-radius: 10%;
+    width: 85%;
+    background:  rgba(20, 20, 20, 0.1);
+    
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:repeat(4, minmax(auto, 230px));
+    grid-gap: 40px;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.navbar {
+    height: 70px;
+    background: radial-gradient(#38148b,#11052C) ;
+    margin-bottom: 15px;
+}
+.form {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    top: 33px;
+    left: 380px;
+}
+
+.buttons {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.layingdog {
+    position: absolute;
+    width: 12%;
+    height: 12%;
+    top: 6px;
+    left: 25px;
+}
+
+.title {
+    color: white;
+    position: absolute;
+    left: 190px;
+    top: 16px;
+}
+.title2 {
+    color: white;
+    position: absolute;
+    left: 567px;
+    top: 8px;
+}
+.title3 {
+    color: white;
+    position: absolute;
+    right: 418px;
+    top: 8px;
+}
+
+.addButton {
+    position: fixed;
+    top: 25px;
+    right: 15px;
+    color: white;
+    text-decoration: none;
+}
+.addpaw {
+    width: 80%;
+    height: 80%;
+}
+.searchbutton {
+    margin-right: 25px;
+}

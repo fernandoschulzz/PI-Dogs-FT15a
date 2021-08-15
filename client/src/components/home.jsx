@@ -5,14 +5,18 @@ import { filterCreated, getDogs, getDogsByName, getDogsByTemperament, sortByName
 import { Link } from "react-router-dom";
 import Card from "./card";
 import Pagination from "./pagination"
+import style from "./home.module.css"
+import pic1 from "../images/layingdog.png"
+import pic2 from "../images/createpaw.png"
 
 export default function Home() {
     const dispatch = useDispatch();
     const allDogs = useSelector(store => store.dogs)
-    // const [posts, setPosts] = useState([]);
+
+    // local State
     const [loading, setloading] = useState(true);
     const [currentPage, setcurrentPage] = useState(1);
-    const [postsPerPage] = useState(9);
+    const [postsPerPage] = useState(8);
     const [ascOrDes, setascOrDes] = useState({sorted: "asc"});
     const [weightOrA_Z, setweightOrA_Z] = useState({sorted: "alphabetic"})
 
@@ -101,42 +105,50 @@ export default function Home() {
 
     return(
         <div>
-            <Link to= "/addnewdog">Create New Dog</Link>
-            <h1>Dog Breeds</h1>
-            <button onClick = {e=> {handleClick(e)}}>Refresh All Dogs</button>
-            <div>
-                <form id="myForm">
+            <div className={style.navbar}>
+            <div><img className={style.layingdog} src={pic1} alt="" /></div>
+            <Link to= "/addnewdog"><div className={style.addButton}><img src={pic2} alt="" className={style.addpaw} /></div></Link>
+            <h1 className={style.title}>Dog Breeds</h1>
+            <h3 className={style.title2}>Search By:</h3>
+            <h3 className={style.title3}>Order By:</h3>
+                <form className={style.form} id="myForm">
                 <input type="text" placeholder="Search..." value={inputText.inputText} onChange={(e) => handleChangeInput(e)}/>
                 <select onChange={(e)=> handleOptionSearch(e)}>
                     <option value="breed">breed</option>
                     <option value="temperament">temperament</option>
                 </select>
-                <button onClick={(e)=> handleClickSubmit(e)}>Search</button>
+                <button onClick={(e)=> handleClickSubmit(e)} className={style.searchbutton}>Search</button>
                 <select onChange={(e)=> handleSortWeight(e)}>
                     <option value="alphabetic">A-Z</option>
                     <option value="weight">weight</option>
+                </select>
+                <select onChange={(e)=> handleSort(e)}>
+                    <option value="asc">ascending</option>
+                    <option value="des">descending </option>
                 </select>
                 <select onChange={(e)=> handleFilterCreated(e)}>
                     <option value="all">all</option>
                     <option value="existent">existent</option>
                     <option value="created">created by me</option>
                 </select>
-                <select onChange={(e)=> handleSort(e)}>
-                    <option value="asc">ascending</option>
-                    <option value="des">descending </option>
-                </select>
+                <button onClick = {e=> {handleClick(e)}}>Refresh All Dogs</button>
                 </form>
+                </div> 
+                <div className={style.main}>
+                <div className={style.container}>
+                <div className={style.buttons}><Pagination postsPerPage={postsPerPage} totalPosts={allDogs.length} paginate={paginate}/></div>
+                <div className={style.cards}>
                 {
                     currentPosts && currentPosts.map(ele => {
                         return (
                         <div key={ele.id}>
-                        <Card name={ele.name} dogImage={ele.image} temperament={ele.temperament} loading={loading}/>
-                        
-                        </div>
+                        <Card  name={ele.name} dogImage={ele.image} temperament={ele.temperament} id={ele.id} loading={loading}/>
+                         </div>
                     )})
                 }
-            </div>
-            <div><Pagination postsPerPage={postsPerPage} totalPosts={allDogs.length} paginate={paginate}/></div>
+                </div>
+                </div>
+                </div>
         </div>
     )
 }

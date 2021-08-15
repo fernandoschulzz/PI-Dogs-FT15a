@@ -1,6 +1,7 @@
-import {GET_DOGS, GET_DOGS_BY_NAME, GET_ID, GET_DOGS_BY_TEMPERAMENT, FILTER_CREATED, SORT_BY_NAME,SORT_BY_WEIGHT, GET_TEMPERAMENTS, POST_NEW_DOG} from "../acctions/const";
+import {GET_DOGS, GET_DOGS_BY_NAME, GET_ID, GET_DOGS_BY_TEMPERAMENT, FILTER_CREATED, SORT_BY_NAME,SORT_BY_WEIGHT, GET_TEMPERAMENTS, POST_NEW_DOG, GET_DOG_BY_ID} from "../acctions/const";
 const initialState = {
     dogs: [],
+    detail: [],
     alldogs: [],
     temperaments: []
 }
@@ -17,6 +18,11 @@ const rootReducer = function (state = initialState, action) {
             return{
                 ...state,
                 dogs: action.payload
+            }
+        case GET_DOG_BY_ID:
+            return{
+                ...state,
+                detail: action.payload
             }
         case GET_DOGS_BY_TEMPERAMENT:
             return{
@@ -51,10 +57,12 @@ const rootReducer = function (state = initialState, action) {
                 return 0
             }) :
             state.dogs.sort(function(a,b){
-                if(a.name > b.name) {
+                var aName= a.name.toLowerCase();
+                var bName= b.name.toLowerCase();
+                if(aName > bName) {
                     return -1;
                 }
-                if(b.name > a.name) {
+                if(bName > aName) {
                     return 1;
                 }
                 return 0

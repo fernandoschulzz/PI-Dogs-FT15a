@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from "./components/home";
 import Landingpage from "./components/landingpage";
 import Addnewdog from "./components/addnewdog"
+import Detail from './components/dogdetails';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path= "/addnewdog">
           <Addnewdog/>
         </Route>
+        <Route path="/dog/:id" component={Detail} />
       </Switch>
     </div>
     </BrowserRouter>

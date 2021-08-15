@@ -1,6 +1,6 @@
 import axios from "axios";
 import { bindActionCreators } from "redux";
-import {GET_DOGS, GET_DOGS_BY_NAME, GET_DOGS_BY_TEMPERAMENT, GET_ID, FILTER_CREATED, SORT_BY_NAME, SORT_BY_WEIGHT, GET_TEMPERAMENTS, POST_NEW_DOG} from "./const";
+import {GET_DOGS, GET_DOGS_BY_NAME, GET_DOGS_BY_TEMPERAMENT, GET_DOG_BY_ID, FILTER_CREATED, SORT_BY_NAME, SORT_BY_WEIGHT, GET_TEMPERAMENTS, POST_NEW_DOG} from "./const";
 
 export function getDogs() {
     return async function(dispatch){
@@ -36,6 +36,16 @@ export function getTemperaments() {
         var json = await axios.get("http://localhost:3001/dogtemperament");
         return dispatch({
             type: GET_TEMPERAMENTS,
+            payload: await json.data
+        })
+    }
+}
+
+export function getDogByID(payload) {
+    return async function(dispatch){
+        var json = await axios.get(`http://localhost:3001/dog/${payload}`);
+        return dispatch({
+            type: GET_DOG_BY_ID,
             payload: await json.data
         })
     }

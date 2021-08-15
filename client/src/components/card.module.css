@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* .mainContainer {
+    position: relative;
+    background-color: crimson;
+} */
+
+.mainContainer:hover {
+    box-shadow: 0 0 5px 2px;
+}
+
+.card {
+    border-radius: 5%;
+    background-color: cornsilk;
+    height: 240px;
+    width: 240px;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+.cardfront {
+backface-visibility: hidden;
+}
+
+.cardback {
+    position: absolute;
+    backface-visibility: hidden;
+    }
+
+.text {
+    font-family: 'Open sans', sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400px;
+    color: black;
+}
+
+.image {
+    padding-top: 10px;
+    border-radius: 10%;
+    width: 220px;
+    height: 170px;
+}
+
+.card_content {
+    padding: 10px;
+}
+
