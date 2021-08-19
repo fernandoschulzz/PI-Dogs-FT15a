@@ -8,6 +8,7 @@ import Pagination from "./pagination"
 import style from "./home.module.css"
 import pic1 from "../images/layingdog.png"
 import pic2 from "../images/createpaw.png"
+import pic3 from "../images/dogpaw.png"
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -34,13 +35,15 @@ export default function Home() {
     
 
     useEffect(()=> {
-        dispatch(getDogs())
         setloading(false);
-    },[dispatch])
+    },[])
 
     function handleClick(e){
         e.preventDefault();
         dispatch(getDogs());
+        setinputText({inputText:"", by: "breed"});
+        setweightOrA_Z({sorted: "alphabetic"});
+        setascOrDes({sorted: "asc"});
         document.getElementById("myForm").reset();
     }
 
@@ -58,17 +61,24 @@ export default function Home() {
         e.preventDefault();
         if(inputText.by === "breed") {
             dispatch(getDogsByName(inputText.inputText));
-            setinputText({inputText:"", by: "breed"})
+            setinputText({inputText:"", by: "breed"});
+            setascOrDes({sorted: "asc"});
+            document.getElementById('filter').selectedIndex = 0;
+            document.getElementById('filter2').selectedIndex = 0;
         }
         if(inputText.by === "temperament") {
             dispatch(getDogsByTemperament(inputText.inputText))
-            setinputText({inputText:"", by: "temperament"})
+            setinputText({inputText:"", by: "temperament"});
+            setascOrDes({sorted: "asc"});
+            document.getElementById('filter').selectedIndex = 0;
+            document.getElementById('filter2').selectedIndex = 0;
         }
         
     }
 
     function handleFilterCreated(e) {
-        dispatch(filterCreated(e.target.value))
+        dispatch(filterCreated(e.target.value));
+        setcurrentPage(1);
     }
 
     function handleSortWeight(e) {
@@ -86,7 +96,7 @@ export default function Home() {
         
     }
 
-    function handleSort(e) {
+     function handleSort(e) {
         e.preventDefault();
         setascOrDes({sorted: e.target.value});
         if(weightOrA_Z.sorted === "weight") {
@@ -102,27 +112,30 @@ export default function Home() {
             setcurrentPage(1);
         }
     }
-
+   
     return(
-        <div>
-            <div className={style.navbar}>
+    <div>
+        <div className={style.navbar}>
             <div><img className={style.layingdog} src={pic1} alt="" /></div>
-            <Link to= "/addnewdog"><div className={style.addButton}><img src={pic2} alt="" className={style.addpaw} /></div></Link>
+            <Link to="/addnewdog">
+            <div className={style.addButton}><img src={pic2} alt="" className={style.addpaw} /></div>
+            </Link>
             <h1 className={style.title}>Dog Breeds</h1>
             <h3 className={style.title2}>Search By:</h3>
             <h3 className={style.title3}>Order By:</h3>
-                <form className={style.form} id="myForm">
-                <input type="text" placeholder="Search..." value={inputText.inputText} onChange={(e) => handleChangeInput(e)}/>
+            <form className={style.form} id="myForm">
+                <input type="text" placeholder="Search..." value={inputText.inputText} onChange={(e)=>
+                handleChangeInput(e)}/>
                 <select onChange={(e)=> handleOptionSearch(e)}>
                     <option value="breed">breed</option>
                     <option value="temperament">temperament</option>
                 </select>
                 <button onClick={(e)=> handleClickSubmit(e)} className={style.searchbutton}>Search</button>
-                <select onChange={(e)=> handleSortWeight(e)}>
+                <select onChange={(e)=> handleSortWeight(e)} id="filter">
                     <option value="alphabetic">A-Z</option>
                     <option value="weight">weight</option>
                 </select>
-                <select onChange={(e)=> handleSort(e)}>
+                <select onChange={(e)=> handleSort(e)} id="filter2">
                     <option value="asc">ascending</option>
                     <option value="des">descending </option>
                 </select>
@@ -131,24 +144,36 @@ export default function Home() {
                     <option value="existent">existent</option>
                     <option value="created">created by me</option>
                 </select>
-                <button onClick = {e=> {handleClick(e)}}>Refresh All Dogs</button>
-                </form>
-                </div> 
-                <div className={style.main}>
-                <div className={style.container}>
-                <div className={style.buttons}><Pagination postsPerPage={postsPerPage} totalPosts={allDogs.length} paginate={paginate}/></div>
-                <div className={style.cards}>
-                {
-                    currentPosts && currentPosts.map(ele => {
-                        return (
-                        <div key={ele.id}>
-                        <Card  name={ele.name} dogImage={ele.image} temperament={ele.temperament} id={ele.id} loading={loading}/>
-                         </div>
-                    )})
-                }
-                </div>
-                </div>
-                </div>
+                <button onClick={e=> {handleClick(e)}}>Refresh All Dogs</button>
+            </form>
         </div>
+        <div className={style.main}>
+            <div className={style.container}>
+                <div className={style.buttons}>
+                    <Pagination postsPerPage={postsPerPage} totalPosts={allDogs.length} paginate={paginate} />
+                </div>
+                <div className={style.cards}>
+                    {
+                    currentPosts.length &&loading === false? currentPosts.map(ele => {
+                    return (
+                    <div key={ele.id}>
+                        <Card name={ele.name} dogImage={ele.image} temperament={ele.temperament} id={ele.id} />
+                    </div>
+                    )}) : <div>
+                        <img src={pic3} alt="" className={style.loading} />
+                        <img src={pic3} alt="" className={style.loading2} />
+                        <img src={pic3} alt="" className={style.loading3} />
+                        <img src={pic3} alt="" className={style.loading4} />
+                        <img src={pic3} alt="" className={style.loading5} />
+                        <img src={pic3} alt="" className={style.loading6} />
+                        <img src={pic3} alt="" className={style.loading7} />
+                        <img src={pic3} alt="" className={style.loading8} />
+                        <img src={pic3} alt="" className={style.loading9} />
+                        <img src={pic3} alt="" className={style.loading10} /></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
     )
 }

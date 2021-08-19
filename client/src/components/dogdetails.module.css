@@ -16,12 +16,13 @@
     top: 50px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .img{
     position: relative;
     border-radius: 5%;
-    top: 65px;
+    top: 100px;
     height: 300px;
     width: 400px;
     margin-left: 10px;
@@ -33,7 +34,7 @@
     flex-direction: column;
     position: relative;
     top: 100px;
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 .info > * {
@@ -46,33 +47,152 @@
 }
 
 .ball {
-    position: relative;
-    padding: 0;
+    position: absolute;
+    padding-bottom: 10px;
     margin: 0;
-    top: 10px;
-    left: 175px;
+    top: 15px;
+    left: 390px;
 }
 
 .button {
-    position: relative;
-    left: -110px;
+    position: absolute;
+    left: 10px;
     top: 20px;
     height: 30px;
     width: 55px;
     margin: 8px;
     border-radius: 3em;
     border-color: #1abc9c;
-    color: #fff;
+    color: rgb(68, 58, 65);
     font-size: 18px;
     background-image: -webkit-linear-gradient(left, rgba(26, 188, 156, 0.6), rgba(26, 188, 156, 0.6) 5%, #1abc9c 5%, #1abc9c 10%, rgba(26, 188, 156, 0.6) 10%, rgba(26, 188, 156, 0.6) 15%, #1abc9c 15%, #1abc9c 20%, rgba(26, 188, 156, 0.6) 20%, rgba(26, 188, 156, 0.6) 25%, #1abc9c 25%, #1abc9c 30%, rgba(26, 188, 156, 0.6) 30%, rgba(26, 188, 156, 0.6) 35%, #1abc9c 35%, #1abc9c 40%, rgba(26, 188, 156, 0.6) 40%, rgba(26, 188, 156, 0.6) 45%, #1abc9c 45%, #1abc9c 50%, rgba(26, 188, 156, 0.6) 50%, rgba(26, 188, 156, 0.6) 55%, #1abc9c 55%, #1abc9c 60%, rgba(26, 188, 156, 0.6) 60%, rgba(26, 188, 156, 0.6) 65%, #1abc9c 65%, #1abc9c 70%, rgba(26, 188, 156, 0.6) 70%, rgba(26, 188, 156, 0.6) 75%, #1abc9c 75%, #1abc9c 80%, rgba(26, 188, 156, 0.6) 80%, rgba(26, 188, 156, 0.6) 85%, #1abc9c 85%, #1abc9c 90%, rgba(26, 188, 156, 0.6) 90%, rgba(26, 188, 156, 0.6) 95%, #1abc9c 95%, #1abc9c 100%);
     background-image: linear-gradient(to right, rgba(26, 188, 156, 0.6), rgba(26, 188, 156, 0.6) 5%, #1abc9c 5%, #1abc9c 10%, rgba(26, 188, 156, 0.6) 10%, rgba(26, 188, 156, 0.6) 15%, #1abc9c 15%, #1abc9c 20%, rgba(26, 188, 156, 0.6) 20%, rgba(26, 188, 156, 0.6) 25%, #1abc9c 25%, #1abc9c 30%, rgba(26, 188, 156, 0.6) 30%, rgba(26, 188, 156, 0.6) 35%, #1abc9c 35%, #1abc9c 40%, rgba(26, 188, 156, 0.6) 40%, rgba(26, 188, 156, 0.6) 45%, #1abc9c 45%, #1abc9c 50%, rgba(26, 188, 156, 0.6) 50%, rgba(26, 188, 156, 0.6) 55%, #1abc9c 55%, #1abc9c 60%, rgba(26, 188, 156, 0.6) 60%, rgba(26, 188, 156, 0.6) 65%, #1abc9c 65%, #1abc9c 70%, rgba(26, 188, 156, 0.6) 70%, rgba(26, 188, 156, 0.6) 75%, #1abc9c 75%, #1abc9c 80%, rgba(26, 188, 156, 0.6) 80%, rgba(26, 188, 156, 0.6) 85%, #1abc9c 85%, #1abc9c 90%, rgba(26, 188, 156, 0.6) 90%, rgba(26, 188, 156, 0.6) 95%, #1abc9c 95%, #1abc9c 100%);
     background-position: 0 0;
-    background-size: 100%;
+    background-size: 150%;
     -webkit-transition: background 300ms ease-in-out;
     transition: background 300ms ease-in-out;
 }
 
 
   .button:hover {
+      color: rgb(255, 255, 255);
     background-position: 100px;
   }
+
+  .loading {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 100px;
+        top: 230px;
+        animation: animate 2s infinite;
+        opacity: 0%;
+
+  }
+  .loading2 {
+    position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 160px;
+        top: 200px;
+        animation: animate 2s infinite;
+        animation-delay: 0.2s;
+        opacity: 0%;
+
+}
+.loading3 {
+    position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 220px;
+        top: 230px;
+        animation: animate 2s infinite;
+        animation-delay: 0.4s;
+        opacity: 0%;
+}
+
+.loading4 {
+    position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 280px;
+        top: 200px;
+        animation: animate 2s infinite;
+        animation-delay: 0.6s;
+        opacity: 0%;
+}
+.loading5 {
+    position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 340px;
+        top: 230px;
+        animation: animate 2s infinite;
+        animation-delay: 0.8s;
+        opacity: 0%;
+}
+.loading6 {
+    position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 400px;
+        top: 200px;
+        animation: animate 2s infinite;
+        animation-delay: 1s;
+        opacity: 0%;
+}
+.loading7 {
+    position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 460px;
+        top: 230px;
+        animation: animate 2s infinite;
+        animation-delay: 1.2s;
+        opacity: 0%;
+}
+.loading8 {
+    position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 520px;
+        top: 200px;
+        animation: animate 2s infinite;
+        animation-delay: 1.4s;
+        opacity: 0%;
+}
+.loading9 {
+    position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 580px;
+        top: 230px;
+        animation: animate 2s infinite;
+        animation-delay: 1.6s;
+        opacity: 0%;
+}
+.loading10 {
+    position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 640px;
+        top: 200px;
+        animation: animate 2s infinite;
+        animation-delay: 1.8s;
+        opacity: 0%;
+}
+  @keyframes animate {
+    1%
+    {
+        opacity: 100%;
+        
+    }
+    50%{
+        opacity: 0%;
+    }
+    
+    99% {
+        opacity: 0%;
+    }
+}
+

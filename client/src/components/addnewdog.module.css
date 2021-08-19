@@ -1,0 +1,263 @@
+.temperaments {
+    background-color: cadetblue;
+    border-radius: 10%;
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    left: 30px;
+    width: 95%;
+    height: 300px;
+    clip-path: circle(80px at 29.8% 70%);
+    transition: all 1s ease-out;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+.temperaments:hover {
+    clip-path:circle(800px);
+}
+
+.circle {
+    background-color: cadetblue;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 115px;
+    left: 285px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+.circle2 {
+    background-color: cadetblue;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 170px;
+    left: 348px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+.circle3 {
+    background-color: cadetblue;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 170px;
+    left: 430px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+.circle4 {
+    background-color: cadetblue;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 115px;
+    left: 490px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+.circle5 {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 18px;
+    left: 345px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+.selecttemp {
+    color: rgba(0,0,0,.6);
+    position: absolute;
+    bottom: 250px;
+    left: 135px;
+}
+.form_box {
+    position: relative;
+    top: 15px;
+    left: 10%;
+    width: 400px;
+    padding: 20px;
+    margin-bottom: 42px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.form_box h2 {
+    margin: 0 0 15px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .form_box .name_box {
+    position: relative;
+  }
+  
+  .form_box .name_box  input {
+    width: 100%;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .form_box .name_box  label {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #fff;
+   
+  }
+
+  .form_box .complete_box {
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .form_box .complete_box  input {
+      width: 50px;
+      margin-right: 15px;
+  }
+
+  .form_box .complete_box  label {
+    position: absolute;
+    left: 0;
+    padding-right: 2px;
+    font-size: 16px;
+    color: #fff;
+   
+  }
+
+  
+  .img label{
+      margin-top: 10px;
+  }
+
+  .img input{
+    padding-top: 10px;
+}
+
+.backbutton {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    height: 30px;
+    width: 55px;
+    margin: 8px;
+    border-radius: 3em;
+    border-color: rgba(0,0,0,.6);
+    color: rgba(0,0,0,.6);
+    font-size: 18px;
+    background-image: -webkit-linear-gradient(left, rgba(26, 188, 156, 0.6), rgba(26, 188, 156, 0.6) 5%, #1abc9c 5%, #1abc9c 10%, rgba(26, 188, 156, 0.6) 10%, rgba(26, 188, 156, 0.6) 15%, #1abc9c 15%, #1abc9c 20%, rgba(26, 188, 156, 0.6) 20%, rgba(26, 188, 156, 0.6) 25%, #1abc9c 25%, #1abc9c 30%, rgba(26, 188, 156, 0.6) 30%, rgba(26, 188, 156, 0.6) 35%, #1abc9c 35%, #1abc9c 40%, rgba(26, 188, 156, 0.6) 40%, rgba(26, 188, 156, 0.6) 45%, #1abc9c 45%, #1abc9c 50%, rgba(26, 188, 156, 0.6) 50%, rgba(26, 188, 156, 0.6) 55%, #1abc9c 55%, #1abc9c 60%, rgba(26, 188, 156, 0.6) 60%, rgba(26, 188, 156, 0.6) 65%, #1abc9c 65%, #1abc9c 70%, rgba(26, 188, 156, 0.6) 70%, rgba(26, 188, 156, 0.6) 75%, #1abc9c 75%, #1abc9c 80%, rgba(26, 188, 156, 0.6) 80%, rgba(26, 188, 156, 0.6) 85%, #1abc9c 85%, #1abc9c 90%, rgba(26, 188, 156, 0.6) 90%, rgba(26, 188, 156, 0.6) 95%, #1abc9c 95%, #1abc9c 100%);
+    background-image: linear-gradient(to right, rgba(26, 188, 156, 0.6), rgba(26, 188, 156, 0.6) 5%, #1abc9c 5%, #1abc9c 10%, rgba(26, 188, 156, 0.6) 10%, rgba(26, 188, 156, 0.6) 15%, #1abc9c 15%, #1abc9c 20%, rgba(26, 188, 156, 0.6) 20%, rgba(26, 188, 156, 0.6) 25%, #1abc9c 25%, #1abc9c 30%, rgba(26, 188, 156, 0.6) 30%, rgba(26, 188, 156, 0.6) 35%, #1abc9c 35%, #1abc9c 40%, rgba(26, 188, 156, 0.6) 40%, rgba(26, 188, 156, 0.6) 45%, #1abc9c 45%, #1abc9c 50%, rgba(26, 188, 156, 0.6) 50%, rgba(26, 188, 156, 0.6) 55%, #1abc9c 55%, #1abc9c 60%, rgba(26, 188, 156, 0.6) 60%, rgba(26, 188, 156, 0.6) 65%, #1abc9c 65%, #1abc9c 70%, rgba(26, 188, 156, 0.6) 70%, rgba(26, 188, 156, 0.6) 75%, #1abc9c 75%, #1abc9c 80%, rgba(26, 188, 156, 0.6) 80%, rgba(26, 188, 156, 0.6) 85%, #1abc9c 85%, #1abc9c 90%, rgba(26, 188, 156, 0.6) 90%, rgba(26, 188, 156, 0.6) 95%, #1abc9c 95%, #1abc9c 100%);
+    background-position: 0 0;
+    background-size: 150%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+
+  .backbutton:hover {
+      color: rgb(255, 255, 255);
+    background-position: 100px;
+  }
+
+  .createbutton {
+    padding: 2px;
+    border: none;
+    color: rgba(0,0,0,.6);
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px
+  }
+
+  .createbutton:hover {
+    background: #04fd81;
+    color: #fff;
+    box-shadow: 0 0 5px #04fd81,
+                0 0 25px #04fd81,
+                0 0 50px #04fd81,
+                0 0 100px #04fd81;
+  }
+
+  .createbutton2 {
+    padding: 2px;
+    border: none;
+    color: rgba(0,0,0,.6);
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px
+  }
+
+  .createbutton2:hover {
+    background: #fd043a;
+    color: #fff;
+    box-shadow: 0 0 5px #fd043a,
+                0 0 25px #fd043a,
+                0 0 50px #fd043a,
+                0 0 100px #fd043a;
+  }
+
+  .buble {
+    position: absolute;
+    top: 15px;
+    right: 500px;
+    width: 300px;
+    height: 140px;
+  }
+
+  .dogpic {
+    position: absolute;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    right: 280px;
+    top: 85px;
+  }
+
+  .requirement {
+    height: 10px;
+    width: 120px;
+    color: rgb(136, 32, 32);
+    position: absolute;
+    top: 35px;
+    right: 585px;
+  }
+
+  .ready {
+    height: 10px;
+    width: 120px;
+    color: rgb(14, 190, 117);
+    position: absolute;
+    top: 35px;
+    right: 585px;
+  }
+
+  .errorsbox {
+    width: 280px;
+    position: absolute;
+    top: 22px;
+    right: 510px;
+  }
+
+  .error {
+    color: rgb(199, 29, 29);
+    font-size: 12px;
+  }

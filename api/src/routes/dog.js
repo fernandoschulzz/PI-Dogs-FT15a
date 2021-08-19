@@ -45,6 +45,12 @@ router.get("/:id", async (req,res) =>{
 
 router.post("/", async (req, res)=> {
     const {name,weight,height,lifespan,image,temperament,createdInDb} = req.body;
+    let allDogs = await getAllDogs();
+    let searchNameDog = allDogs.filter(e=> e.name.toLowerCase() === name.toLowerCase());
+    if(searchNameDog.length > 0) {
+        res.status(404).send("The name already exists!")
+    }
+    else {
     let createdDog = await Dog.create({
         name,
         weight,
@@ -58,7 +64,6 @@ router.post("/", async (req, res)=> {
     });
     createdDog.addTemperament(dbtemperament);
     res.send("Your Dog was created successfully")
-})
-
+}})
 
 module.exports = router;

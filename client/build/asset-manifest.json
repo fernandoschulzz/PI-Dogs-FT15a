@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8914fd1c.chunk.css",
+    "main.js": "/static/js/main.6758c815.chunk.js",
+    "main.js.map": "/static/js/main.6758c815.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ba54af64.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ba54af64.js.map",
+    "static/js/2.b5c48217.chunk.js": "/static/js/2.b5c48217.chunk.js",
+    "static/js/2.b5c48217.chunk.js.map": "/static/js/2.b5c48217.chunk.js.map",
+    "static/js/3.d19802ac.chunk.js": "/static/js/3.d19802ac.chunk.js",
+    "static/js/3.d19802ac.chunk.js.map": "/static/js/3.d19802ac.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.8914fd1c.chunk.css.map": "/static/css/main.8914fd1c.chunk.css.map",
+    "static/js/2.b5c48217.chunk.js.LICENSE.txt": "/static/js/2.b5c48217.chunk.js.LICENSE.txt",
+    "static/media/dogdetails.module.css": "/static/media/backgroundbone.dd062fd2.png",
+    "static/media/dachshund.42e23360.png": "/static/media/dachshund.42e23360.png",
+    "static/media/dogruning.704628d8.png": "/static/media/dogruning.704628d8.png",
+    "static/media/layingdog.ca59ca4c.png": "/static/media/layingdog.ca59ca4c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ba54af64.js",
+    "static/js/2.b5c48217.chunk.js",
+    "static/css/main.8914fd1c.chunk.css",
+    "static/js/main.6758c815.chunk.js"
+  ]
+}
